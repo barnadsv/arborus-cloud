@@ -1,0 +1,16 @@
+{
+  "name": "web-firebase",
+  "version": "1.0.0",
+  "description": "Projeto Firebase do webservice",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "firebase deploy",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Leonardo Barnabé, barnadsv",
+  "license": "ISC",
+  "devDependencies": {
+    "firebase-tools": "^8.10.0"
+  },
+  "dependencies": {}
+}
