@@ -16,4 +16,4 @@ jobs:
       - name: Deploy the web service
         run: npm run deploy --prefix services/web
         env:
-          FIREBASE_TOKEN: ${{ secrest.FIREBASE_TOKEN }}
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
