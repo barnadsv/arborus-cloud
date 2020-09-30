@@ -13,7 +13,9 @@
     "deploy:clean": "rm -fr __sapper__ ./firebase/public",
     "deploy": "run-s deploy:clean export deploy:firebase",
     "deploy:firebase": "npm run deploy --prefix firebase",
-    "postinstall": "npm install --prefix firebase"
+    "postinstall": "npm install --prefix firebase",
+    "cy:run": "node_modules/.bin/cypress run",
+    "cy:open": "node_modules/.bin/cypress open"
   },
   "dependencies": {
     "compression": "^1.7.1",
