@@ -8,7 +8,7 @@ export const FEATURE_TOGGLES = {
 
 const setFeatureTogglesStore = (configValues) =>
   Object.keys(FEATURE_TOGGLES).forEach((toggleKey) => {
-    const featureToggleName = FEATURE_TOBBLES[toggleKey].name;
+    const featureToggleName = FEATURE_TOGGLES[toggleKey].name;
     if (configValues[featureToggleName]) {
       featureTogglesStore.setFeatureToggle(
         featureToggleName,
