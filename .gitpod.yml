@@ -2,6 +2,7 @@ image:
   file: .gitpod.Dockerfile
 
 tasks:
+  - before: brew install git-lfs
   - init: |
       touch /tmp/.npm-lock
       npm install
