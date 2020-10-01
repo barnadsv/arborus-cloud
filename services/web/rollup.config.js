@@ -11,6 +11,8 @@ const mode = process.env.NODE_ENV;
 const dev = mode === "development";
 const legacy = !!process.env.SAPPER_LEGACY_BUILD;
 
+const test = mode === "test";
+
 const onwarn = (warning, onwarn) =>
   (warning.code === "MISSING_EXPORT" && /'preload'/.test(warning.message)) ||
   (warning.code === "CIRCULAR_DEPENDENCY" &&
@@ -29,7 +31,7 @@ export default {
       svelte({
         dev,
         hydratable: true,
-        emitCss: true,
+        emitCss: !test,
       }),
       resolve({
         browser: true,
