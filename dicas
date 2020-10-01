@@ -1,0 +1,5 @@
+Rodar teste no dashboard do Cypress (services/web) - cada um em um terminal:
+    > firefox
+    > npm run dev
+    > npm run cy:open
+    > npm run cy:run -- --record --key 3776ab5e-e4bc-4337-8895-cbef8f584aba
