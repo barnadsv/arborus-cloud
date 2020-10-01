@@ -1,0 +1,25 @@
+[debug] [2020-10-01T18:27:30.199Z] ----------------------------------------------------------------------
+[debug] [2020-10-01T18:27:30.202Z] Command:       /home/gitpod/.nvm/versions/node/v12.18.4/bin/node /workspace/arborus-cloud/services/web/firebase/node_modules/.bin/firebase serve
+[debug] [2020-10-01T18:27:30.202Z] CLI Version:   8.10.0
+[debug] [2020-10-01T18:27:30.202Z] Platform:      linux
+[debug] [2020-10-01T18:27:30.203Z] Node Version:  v12.18.4
+[debug] [2020-10-01T18:27:30.203Z] Time:          Thu Oct 01 2020 18:27:30 GMT+0000 (Coordinated Universal Time)
+[debug] [2020-10-01T18:27:30.203Z] ----------------------------------------------------------------------
+[debug] [2020-10-01T18:27:30.203Z] 
+[debug] [2020-10-01T18:27:30.211Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-10-01T18:27:30.212Z] > authorizing via signed-in user
+[debug] [2020-10-01T18:27:30.212Z] [iam] checking project arborus-cloud for permissions ["firebase.projects.get"]
+[debug] [2020-10-01T18:27:30.216Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/arborus-cloud:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2020-10-01T18:27:30.330Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 01 Oct 2020 18:27:30 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=42","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-10-01T18:27:30.332Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/arborus-cloud  
+ 
+[debug] [2020-10-01T18:27:30.440Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 01 Oct 2020 18:27:30 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] === Serving from '/workspace/arborus-cloud/services/web/firebase'...
+[info] 
+[debug] [2020-10-01T18:27:30.444Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/arborus-cloud/webApps/-/config  
+ 
+[debug] [2020-10-01T18:27:30.951Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 01 Oct 2020 18:27:30 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  hosting: Serving hosting files from: public {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mpublic\u001b[22m"}}
+[info] ✔  hosting: Local server: http://localhost:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5000\u001b[22m\u001b[24m"}}

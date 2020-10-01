@@ -6,7 +6,7 @@ describe("Sapper template app", () => {
   });
   it("has the correct heading", () => {
     // https://testing-library.com/docs/guide-which-query
-    cy.findByRole("heading").should("contain", "Great success!");
+    cy.findByRole("heading").should("contain", "No Great success!");
   });
 });
 
