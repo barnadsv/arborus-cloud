@@ -4,8 +4,9 @@ module.exports = {
     // purgeLayersByDefault: true,
   },
   purge: {
-    purge: ["./src/**/*.svelte", "./src/**/*.html"],
-    // content: ["./src/**/*.svelte"],
+    // mode: 'all',
+    // content: ["./src/**/*.svelte", "./src/**/*.html"],
+    content: ["./src/**/*.svelte"],
     options: {
       whitelistPatterns: [/svelte-/],
     },
@@ -158,5 +159,8 @@ module.exports = {
     height: ["before"],
     position: ["before"],
   },
-  plugins: [require("tailwindcss-pseudo-elements")],
+  plugins: [
+    require("tailwindcss-pseudo-elements"),
+    require("@tailwindcss/typography"),
+  ],
 };

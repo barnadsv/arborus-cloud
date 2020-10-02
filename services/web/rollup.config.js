@@ -7,7 +7,6 @@ import { terser } from "rollup-plugin-terser";
 import config from "sapper/config/rollup.js";
 import pkg from "./package.json";
 import sveltePreprocess from "svelte-preprocess";
-import postcss from "rollup-plugin-postcss";
 import tailwindcss from "tailwindcss";
 
 const mode = process.env.NODE_ENV;
@@ -22,13 +21,11 @@ const onwarn = (warning, onwarn) =>
     /[/\\]@sapper[/\\]/.test(warning.message)) ||
   onwarn(warning);
 
-// const sveltePreprocessOptions = sveltePreprocess({
-//     postcss: {
-//         plugins: [tailwindcss],
-//     },
-// });
-
-const sveltePreprocessOptions = sveltePreprocess({ postcss: true });
+const sveltePreprocessOptions = sveltePreprocess({
+  postcss: {
+    plugins: [tailwindcss],
+  },
+});
 
 export default {
   client: {
@@ -44,9 +41,6 @@ export default {
         hydratable: true,
         emitCss: !test,
         preprocess: sveltePreprocessOptions,
-      }),
-      postcss({
-        extract: "public/tailwind.css",
       }),
       resolve({
         browser: true,
@@ -101,9 +95,6 @@ export default {
         hydratable: true,
         dev,
         preprocess: sveltePreprocessOptions,
-      }),
-      postcss({
-        extract: "public/tailwind.css",
       }),
       resolve({
         dedupe: ["svelte"],

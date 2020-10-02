@@ -18,3 +18,8 @@ ports:
     onOpen: open-browser
   - port: 10000
     onOpen: ignore
+
+vscode:
+  extensions:
+    - stylelint.vscode-stylelint@0.84.0:9CBp08IKCKrtFWDGzEgyjQ==
+    - bradlc.vscode-tailwindcss@0.4.3:OmgUwJW/nFom0SHcYT4VnQ==

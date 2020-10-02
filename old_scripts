@@ -1,0 +1,32 @@
+    "watch:tailwind": "postcss static/tailwind.css -o static/index.css -w",
+    "dev:tailwind": "postcss static/tailwind.css -o static/index.css",
+    "build:tailwind": "NODE_ENV=production postcss static/tailwind.css -o static/index.css",
+    
+    
+    
+    
+    "dev": "run-p dev:*",
+    "dev:css": "postcss src/assets/global.pcss -o static/global.css -w",
+    "dev:firebase": "npm run dev --prefix firebase",
+    "dev:sapper": "sapper dev",
+    
+    "build:css": "NODE_ENV=production postcss src/assets/global.pcss -o static/global.css",
+    "build:sapper": "sapper build --legacy",
+    "build:export": "NODE_ENV=production sapper export ./firebase/public --legacy",
+    "build": "run-s build:css build:sapper",
+    "export:new": "run-s build:css build:export",
+
+    "build:old": "sapper build --legacy",
+    "export": "NODE_ENV=production sapper export ./firebase/public --legacy",
+
+    "start": "node __sapper__/build",
+    "serve": "serve ___sapper__/export",
+    "firebase:login": "firebase login --no-localhost",
+    "deploy:clean": "rm -fr __sapper__ ./firebase/public",
+    "deploy": "run-s deploy:css deploy:clean export deploy:firebase",
+    "deploy:css": "NODE_ENV=production postcss src/assets/global.pcss -o static/global.css",
+    "deploy:firebase": "npm run deploy --prefix firebase",
+    "postinstall": "npm install --prefix firebase",
+    "cy:run": "NODE_ENV=test cypress run",
+    "cy:open": "NODE_ENV=test cypress open",
+    "test": "run-p --race dev cy:run"
