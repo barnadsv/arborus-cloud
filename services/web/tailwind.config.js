@@ -4,8 +4,6 @@ module.exports = {
     // purgeLayersByDefault: true,
   },
   purge: {
-    // mode: 'all',
-    // content: ["./src/**/*.svelte", "./src/**/*.html"],
     content: ["./src/**/*.svelte"],
     options: {
       whitelistPatterns: [/svelte-/],
