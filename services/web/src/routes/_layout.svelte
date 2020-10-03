@@ -1,5 +1,6 @@
 <script>
 
+    import UserObserver from '../components/user-observer.svelte';
     import TailwindCSS from '../components/tailwindcss.svelte';
     import Nav from '../components/Nav.svelte';
 
@@ -17,6 +18,7 @@
 	}
 </style>
 
+<UserObserver />
 <TailwindCSS />
 
 <Nav {segment}/>
