@@ -19,6 +19,7 @@
     <script src="/__/firebase/7.20.0/firebase-analytics.js"></script>
     <script src="/__/firebase/7.20.0/firebase-remote-config.js"></script>
     <script src="/__/firebase/7.20.0/firebase-auth.js"></script>
+    <script src="/__/firebase/7.20.0/firebase-firestore.js"></script>
 
     <!-- Initialize Firebase -->
     <script src="/__/firebase/init.js"></script>
@@ -28,6 +29,7 @@
     >
     <!-- <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script> -->
     <script>
+      var db = firebase.firestore();
       var firebaseAuthUi = new firebaseui.auth.AuthUI(firebase.auth());
     </script>
 
