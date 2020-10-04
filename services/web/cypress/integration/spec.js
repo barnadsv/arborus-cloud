@@ -1,5 +1,3 @@
-import posts from "../../src/routes/blog/_posts";
-
 describe("Sapper template app", () => {
   beforeEach(() => {
     cy.visit("/");
@@ -17,13 +15,21 @@ describe("Blog posts", () => {
   it("has the correct <h1>", () => {
     cy.contains("h1", "Recent posts");
   });
-  posts.forEach((post) => {
-    it(`lists the "${post.title}" blog post`, () => {
-      cy.contains("[data-cy=blog-posts-list] li a", post.title).should(
-        "have.attr",
-        "href",
-        `blog/${post.slug}`
-      );
-    });
+  it("displays blog posts", () => {
+    cy.get("[data-cy=blog-posts-list] li").should("not.have.length", 0);
   });
+  // posts.forEach((post) => {
+  //     it(`lists the "${post.title}" blog post`, () => {
+  //         cy.contains("[data-cy=blog-posts-list] li a", post.title).should(
+  //             "have.attr",
+  //             "href",
+  //             `blog/${post.slug}`
+  //         );
+  //     });
+  // });
 });
+
+// Criar teste que:
+// - Insere um post
+// - Carrega a pagina de blog pra validar se ela existe
+// - Clica no post pra validar se a pagina de detalhe existe
