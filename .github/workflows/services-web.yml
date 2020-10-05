@@ -21,10 +21,10 @@ jobs:
             */*/*/*/node_modules
           key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json')}}
       - name: Install dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
+        # if: steps.cache.outputs.cache-hit != 'true'
         run: npm install
       - name: Bootstrap all services
-        if: steps.cache.outputs.cache-hit != 'true'
+        # if: steps.cache.outputs.cache-hit != 'true'
         run: npm run bootstrap
       - name: Run e2e tests
         uses: cypress-io/github-action@v1
@@ -57,10 +57,10 @@ jobs:
             */*/*/*/node_modules
           key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json')}}
       - name: Install dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
+        # if: steps.cache.outputs.cache-hit != 'true'
         run: npm install
       - name: Bootstrap all services
-        if: steps.cache.outputs.cache-hit != 'true'
+        # if: steps.cache.outputs.cache-hit != 'true'
         run: npm run bootstrap
       - name: Deploy the web service
         run: npm run deploy --prefix services/web
