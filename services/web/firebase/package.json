@@ -4,7 +4,7 @@
   "description": "Projeto Firebase do webservice",
   "main": "index.js",
   "scripts": {
-    "deploy": "firebase deploy",
+    "deploy": "firebase deploy --only hosting,firestore",
     "dev": "npm run build --prefix functions && firebase emulators:start",
     "postinstall": "npm install --prefix functions",
     "test": "echo \"Error: no test specified\" && exit 1"
