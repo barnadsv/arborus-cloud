@@ -31,7 +31,7 @@
 </style>
 
 <svelte:head>
-	<title>Blogs</title>
+	<title>Blog</title>
 </svelte:head>
 
 <h1>Recent posts</h1>
