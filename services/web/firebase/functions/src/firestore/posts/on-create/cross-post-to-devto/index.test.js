@@ -10,8 +10,8 @@ functionsTest.mockConfig({
 });
 
 describe("cross-post-to-devto", () => {
-  let testFunctions: any;
-  let consoleErrorStub: any;
+  let testFunctions;
+  let consoleErrorStub;
 
   before(() => {
     testFunctions = require("../../../../../lib");

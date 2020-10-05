@@ -10,16 +10,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Restore dependencies
-        id: cache
-        uses: actions/cache@master
-        with:
-          path: |
-            node_modules
-            */*/node_modules
-            */*/*/node_mocules
-            */*/*/*/node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json')}}
+      #- name: Restore dependencies
+      #  id: cache
+      #  uses: actions/cache@master
+      #  with:
+      #    path: |
+      #      node_modules
+      #      */*/node_modules
+      #      */*/*/node_mocules
+      #      */*/*/*/node_modules
+      #    key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json')}}
       - name: Install dependencies
         # if: steps.cache.outputs.cache-hit != 'true'
         run: npm install
@@ -29,7 +29,7 @@ jobs:
       - name: Run service tests
         working-directory: ./services/web/firebase/functions
         run: |
-          npm run build ./node_modules/.bin/mocha './src/firestore/posts/on-create/cross-post-to-devto/*.spec.ts' --reporter spec
+          npm run build ./node_modules/.bin/mocha './src/firestore/posts/on-create/cross-post-to-devto/*.test.js' --reporter spec
 
   deploy:
     if: github.event_name == 'push' && github.ref == 'refs/heades/master'
@@ -37,16 +37,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Restore dependencies
-        id: cache
-        uses: actions/cache@master
-        with:
-          path: |
-            node_modules
-            */*/node_modules
-            */*/*/node_mocules
-            */*/*/*/node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json')}}
+      #- name: Restore dependencies
+      #  id: cache
+      #  uses: actions/cache@master
+      #  with:
+      #    path: |
+      #      node_modules
+      #      */*/node_modules
+      #      */*/*/node_mocules
+      #      */*/*/*/node_modules
+      #    key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json')}}
       - name: Install dependencies
         # if: steps.cache.outputs.cache-hit != 'true'
         run: npm install
