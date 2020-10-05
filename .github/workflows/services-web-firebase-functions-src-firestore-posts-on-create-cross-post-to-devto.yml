@@ -29,7 +29,7 @@ jobs:
       - name: Run service tests
         working-directory: ./services/web/firebase/functions
         run: |
-          npm run build ./node_modules/.bin/mocha './src/firestore/posts/on-create/cross-post-to-devto/*.test.ts' --reporter spec
+          npm run build ./node_modules/.bin/mocha './src/firestore/posts/on-create/cross-post-to-devto/*.spec.ts' --reporter spec
 
   deploy:
     if: github.event_name == 'push' && github.ref == 'refs/heades/master'
