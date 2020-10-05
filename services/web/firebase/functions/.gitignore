@@ -10,3 +10,6 @@ node_modules/
 
 .runtimeconfig.json
 
+# Do not ignore tests
+!**/*.test.js
+
