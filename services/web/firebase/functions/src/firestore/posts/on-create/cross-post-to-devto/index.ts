@@ -35,7 +35,7 @@ export default functions.firestore
       );
       try {
         await publishToDevto(blogPost);
-        console.log("Blog post posted to dev.to with success.");
+        console.log("Blog post posted to dev.to with success..");
       } catch (error) {
         console.error(error);
       }

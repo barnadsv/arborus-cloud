@@ -6,7 +6,6 @@
     "outDir": "lib",
     "sourceMap": true,
     "strict": true,
-    "allowJs": true,
     "target": "es2017",
     "typeRoots": ["./node_modules/@types"]
   },

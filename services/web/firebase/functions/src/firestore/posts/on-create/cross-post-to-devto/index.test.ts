@@ -1,17 +1,17 @@
 const expect = require("chai").expect;
 const sinon = require("sinon");
 const got = require("got");
-const test = require("firebase-functions-test")();
+const functionsTest = require("firebase-functions-test")();
 
-test.mockConfig({
+functionsTest.mockConfig({
   crossposttodevto: {
     apikey: "test-api-key",
   },
 });
 
 describe("cross-post-to-devto", () => {
-  let testFunctions;
-  let consoleErrorStub;
+  let testFunctions: any;
+  let consoleErrorStub: any;
 
   before(() => {
     testFunctions = require("../../../../../lib");
@@ -19,14 +19,14 @@ describe("cross-post-to-devto", () => {
 
   after(() => {
     consoleErrorStub.restore();
-    test.cleanup();
+    functionsTest.cleanup();
   });
 
   it("calls the DEV API with correct parameters", async () => {
     const gotPostSpy = sinon.spy(got, "post");
     consoleErrorStub = sinon.stub(console, "error");
 
-    const wrapped = test.wrap(
+    const wrapped = functionsTest.wrap(
       testFunctions.firestore.posts.onCreate.crossPostToDevto
     );
 

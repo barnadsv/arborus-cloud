@@ -21,6 +21,7 @@
     "got": "^11.7.0"
   },
   "devDependencies": {
+    "@types/mocha": "^8.0.3",
     "@types/node": "^14.11.2",
     "chai": "^4.2.0",
     "firebase-functions-test": "^0.2.0",
