@@ -14,8 +14,8 @@
     "deploy": "run-s deploy:clean export deploy:firebase",
     "deploy:firebase": "npm run deploy --prefix firebase",
     "postinstall": "npm install --prefix firebase",
-    "cy:run": "NODE_ENV=test cypress run",
-    "cy:open": "NODE_ENV=test cypress open",
+    "cy:run": "FIRESTORE_EMULATOR_HOST='localhost:8080' NODE_ENV=test cypress run",
+    "cy:open": "FIRESTORE_EMULATOR_HOST='localhost:8080' NODE_ENV=test cypress open",
     "test": "run-p --race dev cy:run"
   },
   "dependencies": {
@@ -40,6 +40,7 @@
     "cssnano": "^4.1.10",
     "cypress": "^5.3.0",
     "cypress-svelte-unit-test": "^3.3.1",
+    "firebase-admin": "^9.2.0",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.1.1",
     "postcss-cli": "^8.0.0",

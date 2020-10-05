@@ -17,6 +17,8 @@
  */
 const rollupPreprocessor = require("@bahmutov/cy-rollup");
 
+const firestoreTasks = require("./firestore");
+
 module.exports = (on, config) => {
   on(
     "file:preprocessor",
@@ -24,4 +26,5 @@ module.exports = (on, config) => {
       configFile: "cypress/rollup.config.js",
     })
   );
+  on("task", firestoreTasks);
 };

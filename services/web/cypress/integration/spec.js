@@ -1,22 +1,37 @@
-describe("Sapper template app", () => {
-  beforeEach(() => {
-    cy.visit("/");
-  });
-  it("has the correct heading", () => {
-    // https://testing-library.com/docs/guide-which-query
-    cy.findByRole("heading").should("contain", "Great success!");
-  });
-});
+// describe("Sapper template app", () => {
+//     beforeEach(() => {
+//         cy.visit("/");
+//     });
+//     it("has the correct heading", () => {
+//         // https://testing-library.com/docs/guide-which-query
+//         cy.findByRole("heading").should("contain", "Great success!");
+//     });
+// });
 
 describe("Blog posts", () => {
-  beforeEach(() => {
+  before(() => {
+    cy.visit("/").then((contentWindow) => {
+      const firebaseAppOptions = contentWindow.firebase.app().options;
+      cy.task("addBlogPost", {
+        firebaseAppOptions,
+        slug: "test-post",
+        post: {
+          content: "A test blog post",
+          title: "Test post",
+        },
+      });
+    });
     cy.visit("/blog");
   });
+  // beforeEach(() => {
+  //     cy.visit("/blog");
+  // });
   it("has the correct <h1>", () => {
     cy.contains("h1", "Recent posts");
   });
-  it("displays blog posts", () => {
-    cy.get("[data-cy=blog-posts-list] li").should("not.have.length", 0);
+  it("displays the test blog post", () => {
+    // cy.get("[data-cy=blog-posts-list] li").should("not.have.length", 0);
+    cy.contains("[data-cy=blog-posts-list] a", "Test post");
   });
   // posts.forEach((post) => {
   //     it(`lists the "${post.title}" blog post`, () => {

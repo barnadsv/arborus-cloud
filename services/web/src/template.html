@@ -30,6 +30,27 @@
     <!-- <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script> -->
     <script>
       var db = firebase.firestore();
+      if (location.hostname === "localhost") {
+        db.settings({
+          host: "localhost:8080",
+          ssl: false,
+        });
+      }
+      if (location.hostname === "localhost") {
+        // Used for end-to-end tests
+        db.settings({
+          host: "localhost:8080",
+          ssl: false,
+          experimentalForceLongPolling: true,
+        });
+      } else if (location.hostname.endsWith("gitpod.io")) {
+        // Used for testing in dev
+        db.settings({
+          host: location.hostname.replace(/\d*-/, "8080-"),
+          ssl: true,
+          experimentalForceLongPolling: true,
+        });
+      }
       var firebaseAuthUi = new firebaseui.auth.AuthUI(firebase.auth());
     </script>
 
