@@ -1,10 +1,12 @@
 <style>
+
     .disabled {
         @apply opacity-50 cursor-not-allowed;
     }
     .enabled:hover {
         @apply bg-indigo-500;
     }
+    
 </style>
 
 <span class="inline-flex rounded-md shadow-sm">
