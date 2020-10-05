@@ -33,7 +33,7 @@ jobs:
           ./node_modules/.bin/mocha './src/firestore/posts/on-create/cross-post-to-devto/*.test.js' --reporter spec
 
   deploy:
-    if: github.event_name == 'push' && github.ref == 'refs/heades/master'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
     needs: test
     runs-on: ubuntu-latest
     steps:
