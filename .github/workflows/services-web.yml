@@ -19,6 +19,7 @@ jobs:
             services/web/node_modules
             services/web/firebase/node_mocules
             services/web/firebase/functions/node_modules
+            /home/runner/.cache/firebase/emulators
           key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json')}}
       - name: Install dependencies
         if: steps.cache.outputs.cache-hit != 'true'
