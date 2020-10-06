@@ -16,15 +16,15 @@ jobs:
         with:
           path: |
             node_modules
-            */*/node_modules
-            */*/*/node_mocules
-            */*/*/*/node_modules
+            services/web/node_modules
+            services/web/firebase/node_mocules
+            services/web/firebase/functions/node_modules
           key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json')}}
       - name: Install dependencies
-        #if: steps.cache.outputs.cache-hit != 'true'
+        if: steps.cache.outputs.cache-hit != 'true'
         run: npm install
       - name: Bootstrap all services
-        #if: steps.cache.outputs.cache-hit != 'true'
+        if: steps.cache.outputs.cache-hit != 'true'
         run: npm run bootstrap
       - name: Run e2e tests
         uses: cypress-io/github-action@v1

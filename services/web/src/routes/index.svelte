@@ -39,7 +39,7 @@
 <h1 class="text-arborus-first-600">Great success!</h1>
 
 <figure>
-	<img alt='Success Kid' src='successkid.jpg'>
+	<img alt='Success Kid!' src='successkid.jpg'>
 	<figcaption>Have fun with Sapper!</figcaption>
 </figure>
 
