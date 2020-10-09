@@ -1,0 +1,7 @@
+{
+  "baseUrl": "http://localhost:3000",
+  "video": false,
+  "componentFolder": "cypress/components",
+  "experimentalComponentTesting": true,
+  "projectId": "xh7mgb"
+}

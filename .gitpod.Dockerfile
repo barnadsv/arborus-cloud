@@ -15,3 +15,8 @@ RUN sudo apt-get update \
    xvfb \
  && sudo rm -rf /var/lib/apt/lists/*
 
+ # Install Firefox
+ RUN sudo apt-get update -q \
+  && sudo apt-get install -yq \
+    firefox \
+    && sudo rm -rf /var/lib/apt/lists/*
