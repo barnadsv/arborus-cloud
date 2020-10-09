@@ -11,7 +11,7 @@
   "author": "Leonardo Barnabé, barnadsv",
   "license": "ISC",
   "devDependencies": {
-    "firebase-tools": "^8.10.0"
+    "firebase-tools": "^8.12.0"
   },
   "dependencies": {}
 }
